@@ -38,6 +38,8 @@ public class HomeController {
             );
         } catch (BadCredentialsException e){
             throw new Exception("INVALID_CREDENTIAL",e);
+        } catch (Exception e){
+            System.out.println(e);
         }
 
         final UserDetails userDetails = userService.loadUserByUsername(jwtRequest.getUsername());
